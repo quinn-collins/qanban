@@ -1,0 +1,17 @@
+{{define "title"}}Card #{{.Card.ID}}{{end}}
+
+{{define "main"}}
+{{with .Card}}
+<div class="card">
+    <div class="metadata">
+        <strong>{{.Title}}</strong>
+        <span>#{{.ID}}</span>
+    </div>
+    <pre><code>{{.Content}}</code></pre>
+    <div class="metadata">
+        <time>Created: {{humanDate .CreatedAt}}</time>
+        <time>Updated: {{humanDate .UpdatedAt}}</time>
+    </div>
+</div>
+{{end}}
+{{end}}
